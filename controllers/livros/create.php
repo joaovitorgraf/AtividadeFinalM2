@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     VALUES ('$titulo', '$autor', '$genero', '$ano_publicacao', '$editora')";
 
     if ($conn->query($sql) === true) {
-        header("Location: index.php"); //redireciona para a o index se der tudo certo
+        header("Location: ../../index.php"); //redireciona para a o index se der tudo certo
         exit();
     } else {
         echo "Erro: " . $sql . "<br>"; //retorna erro

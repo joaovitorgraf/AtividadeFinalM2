@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE tb_usuarios SET nome='$nome', e_mail='$e_mail', telefone='$telefone', endereco='$endereco' WHERE id_usuario=$id";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: index.php");  // Redireciona para a página principal se a atualização for bem-sucedida
+        header("Location: ../../usuarios.php");  // Redireciona para a página principal se a atualização for bem-sucedida
         exit();
     } else {
         echo "Erro: " . $sql . "<br>" . $conn->error;  // Exibe um erro se a atualização falhar

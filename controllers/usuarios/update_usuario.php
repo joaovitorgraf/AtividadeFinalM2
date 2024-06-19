@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -19,6 +19,7 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
+
     <div class="container">
         <h2 class="mt-5">Atualizar Usuario</h2>
         <!-- Formulário para atualizar a pessoa -->

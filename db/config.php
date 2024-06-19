@@ -1,7 +1,7 @@
 <?php
 // Definir as variaveis de conexão com o banco
 
-$servername = "localhost";
+$servername = "localhost:3308";
 $username = "root";
 $password = "";
 $db_name = "biblioteca";

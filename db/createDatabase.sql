@@ -17,8 +17,8 @@ create table tb_livros(
 
 create table tb_usuarios(
 	id_usuario int auto_increment primary key,
-    nome varchar(20) not null,
-    e_mail varchar(20) not null,
+    nome varchar(50) not null,
+    e_mail varchar(50) not null,
 	telefone varchar(15) not null,
     endereco varchar(50) not null,
     created_at timestamp default current_timestamp,

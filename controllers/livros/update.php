@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
 
 <body>
     <div class="container">
-        <h2 class="mt-5">Atualizar Pessoa</h2>
+        <h2 class="mt-5">Atualizar Livro</h2>
         <!-- Formulário para atualizar a pessoa -->
         <form action="update_process.php" method="post">
             <input type="hidden" name="id_livro" value="<?php echo $row['id_livro']; ?>"> <!-- Campo oculto com o ID -->
