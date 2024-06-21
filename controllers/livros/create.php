@@ -1,12 +1,14 @@
 <?php
 include '../../db/config.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $titulo = $_POST["titulo"];
-    $autor = $_POST["autor"];
-    $genero = $_POST["genero"];
-    $ano_publicacao = $_POST["ano_publicacao"];
-    $editora = $_POST["editora"];
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT); //recebe os dados enviados do JS
+
+if (!empty($dados)) {
+    $titulo = $dados["titulo"];
+    $autor = $dados["autor"];
+    $genero = $dados["genero"];
+    $ano_publicacao = $dados["ano_publicacao"];
+    $editora = $dados["editora"];
 
     // inserindo na tabela
     $sql = "INSERT INTO tb_livros (titulo, autor, genero, ano_publicacao, editora)

@@ -1,63 +1,36 @@
-function validarFormulario() {
-    // Limpar mensagens de erro e estilos
-    limparErros();
+const form = document.querySelector('#cad_livro');
 
-    // Obter valores dos campos
-    const titulo = document.getElementById('titulo').value.trim();
-    const autor = document.getElementById('autor').value.trim();
-    const genero = document.getElementById('genero').value.trim();
-    const ano_publicacao = document.getElementById('anoPublicacao').value.trim();
-    const editora = document.getElementById('editora').value.trim();
+const btnSalvar = document.getElementById('btnSalvar');
+btnSalvar.addEventListener('click', async (event) => {
+    event.preventDefault();
 
-    let formValido = true;
+    const titulo = document.getElementById('titulo');
+    const autor = document.getElementById('autor');
+    const genero = document.getElementById('genero');
+    const ano_publicacao = document.getElementById('ano_publicacao');
+    const editora = document.getElementById('editora');
 
-    // Verificar se os campos estão preenchidos
-    if (titulo === '') {
-        mostrarErro('titulo', 'Título é obrigatório.');
-        formValido = false;
+    if (titulo.value === '') {
+        alert('Titulo não informado!');
+        titulo.focus();
+    } else if (autor.value === '') {
+        alert('Autor não informado!');
+        autor.focus();
+    } else if (genero.value === '') {
+        alert('Gênero não informado!');
+        genero.focus();
+    } else if (ano_publicacao.value === '') {
+        alert('Ano de publicação não informado!');
+        ano_publicacao.focus();
+    } else if (editora.value === '') {
+        alert('Editora não informada!');
+        editora.focus();
+    } else {
+        const dadosForm = new FormData(form);
+        const dados = await fetch('./controllers/livros/create.php', {
+            method: 'POST',
+            body: dadosForm,
+        });
+        window.location.reload();
     }
-
-    if (autor === '') {
-        mostrarErro('autor', 'Autor é obrigatório.');
-        formValido = false;
-    }
-
-    if (genero === '') {
-        mostrarErro('genero', 'Gênero é obrigatório.');
-        formValido = false;
-    }
-
-    if (ano_publicacao === '') {
-        mostrarErro('anoPublicacao', 'Ano de Publicação é obrigatório.');
-        formValido = false;
-    } else if (isNaN(ano_publicacao) || ano_publicacao < 0 || ano_publicacao > new Date().getFullYear()) {
-        mostrarErro('anoPublicacao', 'Ano de Publicação inválido.');
-        formValido = false;
-    }
-
-    if (editora === '') {
-        mostrarErro('editora', 'Editora é obrigatória.');
-        formValido = false;
-    }
-
-    return formValido;
-}
-
-function mostrarErro(campoId, mensagem) {
-    const campo = document.getElementById(campoId);
-    const erro = document.getElementById(campoId + 'Error');
-    campo.classList.add('is-invalid');
-    erro.textContent = mensagem;
-    erro.classList.add('invalid-feedback');
-}
-
-function limparErros() {
-    const campos = ['titulo', 'autor', 'genero', 'anoPublicacao', 'editora'];
-    campos.forEach(campoId => {
-        const campo = document.getElementById(campoId);
-        const erro = document.getElementById(campoId + 'Error');
-        campo.classList.remove('is-invalid');
-        erro.textContent = '';
-        erro.classList.remove('invalid-feedback');
-    });
-}
+});

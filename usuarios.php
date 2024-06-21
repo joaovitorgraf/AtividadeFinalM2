@@ -78,24 +78,24 @@
                         <h5 class="modal-title" id="usuarioModalLabel">Adicionar Usuário</h5>
                     </div>
                     <div class="modal-body">
-                        <form action="controllers/usuarios/create_usuarios.php" method="post" id="usuarioForm">
+                        <form id="form_usu">
                             <div class="form-group">
-                                <label for="usuarioNome">Nome</label>
-                                <input type="text" name="nome" class="form-control" id="usuarioNome" required>
+                                <label for="nome">Nome</label>
+                                <input type="text" name="nome" class="form-control" id="nome" required>
                             </div>
                             <div class="form-group">
-                                <label for="usuarioEmail">E-mail</label>
-                                <input type="email" name="e_mail" class="form-control" id="usuarioEmail" required>
+                                <label for="e_mail">E-mail</label>
+                                <input type="email" name="e_mail" class="form-control" id="e_mail" required>
                             </div>
                             <div class="form-group">
-                                <label for="usuarioTelefone">Telefone</label>
-                                <input type="text" name="telefone" class="form-control" id="usuarioTelefone" required>
+                                <label for="telefone">Telefone</label>
+                                <input type="text" name="telefone" class="form-control" id="telefone" required>
                             </div>
                             <div class="form-group">
-                                <label for="usuarioEndereco">Endereço</label>
-                                <input type="text" name="endereco" class="form-control" id="usuarioEndereco" required>
+                                <label for="endereco">Endereço</label>
+                                <input type="text" name="endereco" class="form-control" id="endereco" required>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-4">Salvar</button>
+                            <a id="btnSalvarUsu" class="btn btn-primary mt-4">Salvar</a>
                         </form>
                     </div>
                 </div>
@@ -103,8 +103,8 @@
         </div>
 
 
+        <script type="text/javascript" src="./scriptUsu.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>

@@ -80,74 +80,33 @@
                     <h5 class="modal-title" id="usuarioModalLabel">Adicionar Livro</h5>
                 </div>
                 <div class="modal-body">
-                    <form action="controllers/livros/create.php" method="post" id="usuarioForm" onsubmit="return validarFormulario()">
+                    <form id="cad_livro">
                         <div class="form-group">
                             <label for="titulo">Titulo</label>
-                            <input type="text" name="titulo" class="form-control" id="titulo" required>
+                            <input type="text" name="titulo" class="form-control" id="titulo">
                             <span id="tituloError"></span>
                         </div>
                         <div class="form-group">
                             <label for="autor">Autor</label>
-                            <input type="text" name="autor" class="form-control" id="autor" required>
+                            <input type="text" name="autor" class="form-control" id="autor">
                             <span id="autorError"></span>
                         </div>
                         <div class="form-group">
                             <label for="genero">Genero</label>
-                            <input type="text" name="genero" class="form-control" id="genero" required>
+                            <input type="text" name="genero" class="form-control" id="genero">
                             <span id="generoError"></span>
                         </div>
                         <div class="form-group">
                             <label for="ano_publicacao">Ano de Publicação</label>
-                            <input type="text" name="ano_publicacao" class="form-control" id="ano_publicacao" required>
+                            <input type="text" name="ano_publicacao" class="form-control" id="ano_publicacao">
                             <span id="ano_publicacaoError"></span>
                         </div>
                         <div class="form-group">
                             <label for="editora">Editora</label>
-                            <input type="text" name="editora" class="form-control" id="editora" required>
+                            <input type="text" name="editora" class="form-control" id="editora">
                             <span id="editoraError"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary mt-4">Salvar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Edit -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="usuarioModalLabel">Editar Livro</h5>
-                </div>
-                <div class="modal-body">
-                    <form action="controllers/livros/create.php" method="post" id="usuarioForm" onsubmit="return validarFormulario()">
-                        <div class="form-group">
-                            <label for="titulo">Titulo</label>
-                            <input type="text" name="titulo" class="form-control" id="titulo" required>
-                            <span id="tituloError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="autor">Autor</label>
-                            <input type="text" name="autor" class="form-control" id="autor" required>
-                            <span id="autorError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="genero">Genero</label>
-                            <input type="text" name="genero" class="form-control" id="genero" required>
-                            <span id="generoError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="ano_publicacao">Ano de Publicação</label>
-                            <input type="text" name="ano_publicacao" class="form-control" id="ano_publicacao" required>
-                            <span id="ano_publicacaoError"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="editora">Editora</label>
-                            <input type="text" name="editora" class="form-control" id="editora" required>
-                            <span id="editoraError"></span>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-4">Salvar</button>
+                        <a id="btnSalvar" class="btn btn-primary mt-4">Salvar</a>
                     </form>
                 </div>
             </div>
@@ -155,8 +114,8 @@
     </div>
 
 
+    <script type="text/javascript" src="./script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
